@@ -1,0 +1,26 @@
+[project]
+name = "data-ingestion-framework"
+version = "0.1.0"
+description = "Reusable runtime for building thin data-source ingestions into a consistent S3 data lake."
+readme = "README.md"
+authors = [
+    { name = "Adrian Koszalka", email = "adriankoszalka96@gmail.com" }
+]
+requires-python = ">=3.14"
+dependencies = [
+    "boto3",
+    "pydantic",
+]
+
+[dependency-groups]
+dev = [
+    "pytest",
+    "moto[s3]",
+    "pre-commit",
+    "black",
+    "isort",
+]
+
+[build-system]
+requires = ["uv_build>=0.13.7,<0.14.0"]
+build-backend = "uv_build"
